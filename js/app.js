@@ -10,13 +10,21 @@ App.Router.map(function() {
 // Ember Routes responsible for hooking models
 App.ContactsRoute = Ember.Route.extend({
   model: function() {
-    return contacts;
+    return $.getJSON("http://localhost:3000/contacts").then(function(data) {
+      return data.contacts.map(function(contact) {
+        contact.avatarUrl = contact.avatar_url;
+        return contact;
+      });
+    });
   }
 });
 
 App.ContactRoute = Ember.Route.extend({
   model: function(params) {
-    return contacts.findBy("id", params.contact_id);
+    return $.getJSON("http://localhost:3000/contacts/" + params.contact_id).then(function(data) {
+      data.contact.avatarUrl = data.contact.avatar_url;
+      return data.contact;
+    });
   }
 });
 
