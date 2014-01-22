@@ -7,10 +7,23 @@ App.Router.map(function() {
   });
 });
 
-// Embers Routes responsible for hooking models
+// Ember Routes responsible for hooking models
 App.ContactsRoute = Ember.Route.extend({
   model: function() {
     return contacts;
+  }
+});
+
+// Ember Controllers process actions and interact with a model
+App.ContactController = Ember.ObjectController.extend({
+  isEditing: false,
+  actions: {
+    edit: function() {
+      this.set('isEditing', true);
+    },
+    save: function() {
+      this.set('isEditing', false);
+    }
   }
 });
 

@@ -54,12 +54,53 @@
     <div class="row">
       <div class="large-12 columns contact">
         <h2>{{name}}</h2>
-        <div class="detail date">{{birthday}}</div>
-        <div class="detail phone">{{phone}}</div>
-        <p>{{notes}}</p>
+        {{#if isEditing}}
+          {{partial 'contact/edit'}}
+          <button {{action 'save'}} class="button">Save</button>
+        {{else}}
+          <div class="detail date">{{birthday}}</div>
+          <div class="detail phone">{{phone}}</div>
+          <p>{{notes}}</p>
+          <button {{action 'edit'}} class="button">Edit</button>
+        {{/if}}
       </div>
     </div>
   </script>
+
+  <script type="text/x-handlebars" id="contact/edit">
+  <form>
+    <div class="row">
+      <div class="large-12 columns">
+        <label>Name</label>
+        {{input type="text" value=name}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns">
+        <label>Short bio</label>
+        {{input type="text" value=bio}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns">
+        <label>Avatar URL</label>
+        {{input type="text" value=avatarUrl}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns">
+        <label>Contact number</label>
+        {{input type="text" value=phone}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns">
+        <label>Notes to remember</label>
+        {{textarea value=notes cols="80" rows="20"}}
+      </div>
+    </div>
+  </form>
+</script>
 
   <script src="js/libs/jquery-1.10.2.js"></script>
   <script src="js/libs/handlebars-1.1.2.js"></script>
