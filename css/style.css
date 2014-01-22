@@ -1,4 +1,61 @@
-/* Put your CSS here */
-.ember-application {
-    margin: 20px;
+body {
+  padding: 1em;
+}
+
+h1 {
+  text-transform: uppercase;
+}
+
+textarea {
+  min-height: 150px;
+}
+
+.active {
+  opacity: 0.7;
+}
+
+header {
+  margin: 1em 0 2em;
+}
+
+.button {
+  padding: 0.5em 1.4em;
+  font-weight: 300;
+  border-radius: 2px;
+  background-color: #1abc9c;
+  border-color: #16a085;
+}
+
+.button:hover, .button:focus {
+  background-color: #16a085;
+}
+
+ul.contacts li {
+  height: 80px;
+}
+
+ul.contacts li a {
+  display: block;
+  height: 1.4em;
+  font-size: 1.4em;
+  line-height: 1.4em;
+}
+
+ul.contacts li img {
+  border-radius: 100%;
+  max-width: 60px;
+  float: left;
+  clear: both;
+  margin-right: 1em;
+}
+
+.contact h2 {
+  height: 2em;
+}
+
+.contact .detail {
+  color: #555;
+  font-size: 1.2em;
+  font-weight: 300;
+  margin: 0 0 2em 0;
 }

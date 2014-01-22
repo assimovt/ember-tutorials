@@ -10,7 +10,18 @@
 <body>
 
   <script type="text/x-handlebars">
-    {{outlet}}
+    <header>
+      <div class="row">
+        <ul class="inline-list">
+          <li>{{#link-to "index"}}Home{{/link-to}}</li>
+          <li>{{#link-to "contacts"}}People{{/link-to}}</li>
+        </ul>
+      </div>
+    </header>
+
+    <div class="row" id="main">
+      {{outlet}}
+    </div>
   </script>
 
   <script type="text/x-handlebars" id="index">
