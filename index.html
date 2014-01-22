@@ -58,7 +58,7 @@
           {{partial 'contact/edit'}}
           <button {{action 'save'}} class="button">Save</button>
         {{else}}
-          <div class="detail date">{{birthday}}</div>
+          <div class="detail date">{{format-date birthday}}</div>
           <div class="detail phone">{{phone}}</div>
           <p>{{notes}}</p>
           <button {{action 'edit'}} class="button">Edit</button>

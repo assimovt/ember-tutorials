@@ -33,6 +33,11 @@ App.ContactController = Ember.ObjectController.extend({
   }
 });
 
+// Ember Helpers help to keep the views DRY
+Ember.Handlebars.helper("format-date", function(date) {
+  return moment(date).format("Do MMMM YYYY");
+});
+
 var contacts = [{
   id: "1",
   name: "Juan Carlos",
