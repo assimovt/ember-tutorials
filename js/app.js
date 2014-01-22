@@ -14,6 +14,12 @@ App.ContactsRoute = Ember.Route.extend({
   }
 });
 
+App.ContactRoute = Ember.Route.extend({
+  model: function(params) {
+    return contacts.findBy("id", params.contact_id);
+  }
+});
+
 // Ember Controllers process actions and interact with a model
 App.ContactController = Ember.ObjectController.extend({
   isEditing: false,
